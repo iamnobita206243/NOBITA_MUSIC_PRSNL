@@ -42,9 +42,8 @@ HEROKU_APP_NAME = getenv("HEROKU_APP_NAME")
 # Get it from http://dashboard.heroku.com/account
 HEROKU_API_KEY = getenv("HEROKU_API_KEY")
 
-API_URL = getenv("API_URL", 'https://api.thequickearn.xyz') #youtube song url
-VIDEO_API_URL = getenv("VIDEO_API_URL", 'https://api.video.thequickearn.xyz')
-API_KEY = getenv("API_KEY", '30DxNexGenBots23d30d') # youtube song api key
+BASE_API_URL = "https://zyro.zyronetworks.shop"
+BASE_API_KEY = "N9F81n1ZDxiKo4gsJsiQXsv7m5U7IPx2"
 
 UPSTREAM_REPO = getenv(
     "UPSTREAM_REPO",
