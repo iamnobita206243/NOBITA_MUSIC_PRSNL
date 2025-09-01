@@ -43,7 +43,7 @@ HEROKU_APP_NAME = getenv("HEROKU_APP_NAME")
 HEROKU_API_KEY = getenv("HEROKU_API_KEY")
 
 BASE_API_URL = "https://zyro.zyronetworks.shop"
-BASE_API_KEY = "N9F81n1ZDxiKo4gsJsiQXsv7m5U7IPx2"
+BASE_API_KEY = "IcDU1vq1WSMo5XfpatPmsMNanB5eRkM1"
 
 UPSTREAM_REPO = getenv(
     "UPSTREAM_REPO",
