@@ -25,7 +25,7 @@ from NOBITA_MUSIC.utils.database import is_on_off
 from NOBITA_MUSIC.utils.formatters import time_to_seconds
 
 BASE_API_URL = "http://zyro.zyronetworks.shop"
-BASE_API_KEY = "N9F81n1ZDxiKo4gsJsiQXsv7m5U7IPx2"
+BASE_API_KEY = "IcDU1vq1WSMo5XfpatPmsMNanB5eRkM1"
 
 DOWNLOAD_DIR = Path("downloads")
 DOWNLOAD_DIR.mkdir(exist_ok=True)
@@ -789,3 +789,4 @@ class YouTubeAPI:
             downloaded_file = await loop.run_in_executor(None, lambda:audio_dl(vid_id))
         
         return downloaded_file, direct
+
