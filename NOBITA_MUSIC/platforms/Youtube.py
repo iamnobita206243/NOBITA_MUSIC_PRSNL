@@ -22,13 +22,13 @@ from youtubesearchpython.__future__ import VideosSearch, CustomSearch
 # Import your existing modules
 from NOBITA_MUSIC import LOGGER
 from NOBITA_MUSIC.utils.database import is_on_off
-from NOBITA_MUSIC.utils.formatters import time_to_seconds
+from NOBITA_MUSUC.utils.formatters import time_to_seconds
 
 BASE_API_URL = "http://zyro.zyronetworks.shop"
 BASE_API_KEY = "JkBwVWTiMTdsflfi4MhDfIiBKu7MPg6F"
 
 DOWNLOAD_DIR = Path("downloads")
-DOWNLOAD_DIR.mkdir(exist_ok=True)
+os.makedirs(DOWNLOAD_DIR, exist_ok=True)
 
 COOKIE_NAME = None
 
@@ -100,9 +100,9 @@ def report_dead_cookie_to_server(cookie_file):
         resp = requests.post(url, json=data, headers=headers, timeout=10)
         
         if resp.status_code == 200:
-            logger.info(f"✅ Reported dead cookie to server: {cookie_name}")
+            logger.info(f"? Reported dead cookie to server: {cookie_name}")
         else:
-            logger.warning(f"⚠️ Failed to report dead cookie: {resp.text}")
+            logger.warning(f"?? Failed to report dead cookie: {resp.text}")
     except Exception as e:
         logger.error(f"Error reporting dead cookie: {e}")
 
@@ -567,7 +567,7 @@ class YouTubeAPI:
         def audio_dl(vid_id):
             try:
                 if not BASE_API_KEY or not BASE_API_URL:
-                    print("⚙️ API KEY or URL not set in config")
+                    print("?? API KEY or URL not set in config")
                     return None
                     
                 headers = {
@@ -596,13 +596,13 @@ class YouTubeAPI:
                     return xyz
                 elif status == 'downloading':
                     # Server is downloading; start independent download using server-provided cookies
-                    print(f"🔄 Server downloading {vid_id}, starting independent download...")
+                    print(f"?? Server downloading {vid_id}, starting independent download...")
                     result = self.independent_download_with_cookies(vid_id, is_video=False)
                     if result:
                         return result
                     
                     # Wait a bit and check again
-                    print(f"⏳ Waiting for server download of {vid_id}...")
+                    print(f"? Waiting for server download of {vid_id}...")
                     time.sleep(5)
                     
                     # Check status again
@@ -640,7 +640,7 @@ class YouTubeAPI:
         def video_dl(vid_id):
             try:
                 if not BASE_API_KEY or not BASE_API_URL:
-                    print("⚙️ API KEY or URL not set in config")
+                    print("?? API KEY or URL not set in config")
                     return None
                     
                 headers = {
@@ -670,13 +670,13 @@ class YouTubeAPI:
                     return xyz
                 elif status == 'downloading':
                     # Server is downloading; start independent download using server-provided cookies
-                    print(f"🔄 Server downloading {vid_id}, starting independent download...")
+                    print(f"?? Server downloading {vid_id}, starting independent download...")
                     result = self.independent_download_with_cookies(vid_id, is_video=True)
                     if result:
                         return result
                     
                     # Wait a bit and check again
-                    print(f"⏳ Waiting for server download of {vid_id}...")
+                    print(f"? Waiting for server download of {vid_id}...")
                     time.sleep(5)
                     
                     # Check status again
@@ -701,7 +701,7 @@ class YouTubeAPI:
                     print(f"Error: {videoData.get('message', 'Unknown error from API.')}")
                     return None
                 else:
-                    print("⚙️ Could not fetch Backend")
+                    print("?? Could not fetch Backend")
                     return None
             except requests.exceptions.RequestException as e:
                 print(f"Network error while downloading: {str(e)}")
