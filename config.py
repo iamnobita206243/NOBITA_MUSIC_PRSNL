@@ -45,8 +45,6 @@ HEROKU_API_KEY = getenv("HEROKU_API_KEY")
 BASE_API_URL = "http://zyro.zyronetworks.shop"
 BASE_API_KEY = "JkBwVWTiMTdsflfi4MhDfIiBKu7MPg6F"
 
-BABYAPI = "https://ytapi-i0t6.onrender.com"
-
 UPSTREAM_REPO = getenv(
     "UPSTREAM_REPO",
     "https://github.com/iamnobita206243/NOBITA_MUSIC_PRSNL",
