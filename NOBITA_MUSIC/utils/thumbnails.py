@@ -92,8 +92,8 @@ async def get_thumb(videoid):
         bold_font = ImageFont.truetype("NOBITA_MUSIC/assets/font.ttf", 33)
 
     
-        text_size = draw.textsize("𝐓ᴇᴀᴍ 𝐍ᴏʙɪᴛᴀ 𝐌ᴜsɪᴄ   ", font=font)
-        draw.text((1280 - text_size[0] - 10, 10), "𝐓ᴇᴀᴍ 𝐍ᴏʙɪᴛᴀ 𝐌ᴜsɪᴄ   ", fill="yellow", font=font)
+        text_size = draw.textsize("TEAM NOBITA MUSIC", font=font)
+        draw.text((1280 - text_size[0] - 10, 10), "TEAM NOBITA MUSIC", fill="yellow", font=font)
 
     
         draw.text(
